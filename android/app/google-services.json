@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "911024421710",
+    "project_id": "navsocial-d3d41",
+    "storage_bucket": "navsocial-d3d41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911024421710:android:11f2835cedb3cd16db3c1f",
+        "android_client_info": {
+          "package_name": "com.example.navsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911024421710-3p06f8eg7hgd057csm960e2612803fpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.navsocial",
+            "certificate_hash": "c87d4b50b2b0ea45e628a9796dc4b68aab7c2224"
+          }
+        },
+        {
+          "client_id": "911024421710-jia6gqvnrei7ocrp0568sh204ocm6dbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWkMrHyBrlaaE4f9mqlHIEnCDddjMUNow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911024421710-jia6gqvnrei7ocrp0568sh204ocm6dbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
