@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 import 'package:navsocial/constants/controller.dart';
-import 'package:navsocial/view/FullPost/Single/full_post_widget.dart';
+import 'package:navsocial/view/FullPost/Single/comment_widget.dart';
 
 class FullPostMediaPage extends StatelessWidget {
   const FullPostMediaPage({Key key}) : super(key: key);
@@ -13,6 +13,17 @@ class FullPostMediaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          hoverElevation: 0,
+          focusElevation: 0,
+          highlightElevation: 0,
+          onPressed: () {
+            fullPostController.scrollUp();
+          },
+          child: Icon(Icons.arrow_upward_sharp),
+          backgroundColor: Colors.grey.withOpacity(0.6),
+        ),
         appBar: AppBar(
           elevation: 5,
           backgroundColor: Colors.white,
@@ -39,6 +50,7 @@ class FullPostMediaPage extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
+          controller: fullPostController.controller,
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
@@ -140,42 +152,31 @@ class FullPostMediaPage extends StatelessWidget {
                                 vertical: 10, horizontal: 5)),
                       )),
                       Container(
-                        margin: EdgeInsets.only(left: 10, right: 10),
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Icon(
-                          Icons.camera_alt,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ),
-                      Text(
-                        "Send",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                      )
+                          margin: EdgeInsets.only(left: 10),
+                          child: InkWell(onTap: (){},
+                            child: Text(
+                              "Send",
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )),
                     ],
                   ),
                 ),
               ),
-              Card(elevation: 10,
-                child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return FullPostWidget();
-
-                  },
-                )
-                  )
+              Card(
+                  elevation: 10,
+                  child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return CommentWidget();
+                    },
+                  ))
             ],
           ),
         ));

@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:navsocial/controller/auth_controller.dart';
+import 'package:navsocial/controller/full_post_controller.dart';
 import 'package:navsocial/controller/home_controller.dart';
 import 'package:navsocial/controller/other_people_personal_controller.dart';
 import 'package:navsocial/controller/search_controller.dart';
+import 'package:navsocial/controller/updateinfo_controller.dart';
 import 'package:navsocial/view/BottomNavTAB/Main/Newfeed.dart';
 import 'package:navsocial/view/BottomNavTAB/Personal/Personal.dart';
+import 'package:navsocial/view/BottomNavTAB/Personal/editprofile.dart';
+import 'package:navsocial/view/BottomNavTAB/Personal/updateinfo.dart';
 import 'package:navsocial/view/BottomNavTAB/Search/Search.dart';
+import 'package:navsocial/view/FullPost/Display/create_new_post.dart';
 import 'package:navsocial/view/Loading.dart';
 import 'package:navsocial/view/Login.dart';
 import 'package:navsocial/view/Home.dart';
@@ -28,6 +33,8 @@ Future main() async {
     Get.put(PersonalController());
     Get.put(SearchController());
     Get.put(OtherPeoplePersonalController());
+    Get.put(FullPostController());
+    Get.put(UpdateInfoController());
   });
   runApp(MyApp());
 }
@@ -50,7 +57,10 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(name: "/search", page: () => SearchPage()),
         GetPage(name: "/newfeed", page: () => NewFeedPage()),
-        GetPage(name: "/personal", page: () => PersonalPage())
+        GetPage(name: "/personal", page: () => PersonalPage()),
+        GetPage(name: "/newpost", page: () => CreateNewPostPage()),
+        GetPage(name: "/editprofile", page: ()=> EditProfilePage()),
+        GetPage(name: "/updateinfo", page: ()=>UpdateInfoPages()),
       ],
       initialRoute: "/login",
     );

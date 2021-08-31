@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:navsocial/constants/controller.dart';
 
-class RecentMedia extends StatelessWidget {
-  const RecentMedia({Key key}) : super(key: key);
+class MainMedia extends StatelessWidget {
+  const MainMedia({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

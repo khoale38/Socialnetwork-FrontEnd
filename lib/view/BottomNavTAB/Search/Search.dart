@@ -4,9 +4,11 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:navsocial/constants/controller.dart';
 import 'package:navsocial/view/BottomNavTAB/Search/Widget/people_search_widget.dart';
-import 'package:navsocial/view/BottomNavTAB/Search/Widget/recent_media_search_widget.dart';
+import 'package:navsocial/view/FullPost/Display/main_media.dart';
 import 'package:navsocial/view/BottomNavTAB/Search/full_people_search.dart';
 import 'package:navsocial/view/FullPost/OtherPeople/other_people_personal.dart';
+import 'package:navsocial/view/FullPost/Single/full_post_media.dart';
+import 'package:navsocial/view/FullPost/Single/comment_widget.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key key}) : super(key: key);
@@ -207,7 +209,7 @@ class searchWidgetState extends State<SearchPage>
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: 3,
                         itemBuilder: (context, index) {
-                          return Card(child: RecentMedia(),elevation: 5,);
+                          return Card(child: GestureDetector(child: MainMedia(),onTap: ()=>Get.to(()=>FullPostMediaPage()),),elevation: 5,);
                         },
                         separatorBuilder: (context, index) {
                           return Divider(

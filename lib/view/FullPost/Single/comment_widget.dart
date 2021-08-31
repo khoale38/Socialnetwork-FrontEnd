@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:navsocial/constants/controller.dart';
 
-class FullPostWidget extends StatelessWidget {
-  const FullPostWidget({Key key}) : super(key: key);
+class CommentWidget extends StatelessWidget {
+  const CommentWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

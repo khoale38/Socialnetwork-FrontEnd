@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:navsocial/constants/controller.dart';
 import 'package:shimmer/shimmer.dart';
@@ -64,7 +64,9 @@ class PersonalPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(3),
                               side: BorderSide(color: Colors.grey, width: 1)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed("/editprofile");
+                        },
                         icon: Icon(Icons.edit,color: Colors.grey,size: 20),
                         label: Text(
                           'Edit Profile',
