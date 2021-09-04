@@ -26,6 +26,9 @@ class EditProfilePage extends StatelessWidget {
               Get.back();
             },
           ),
+          actions: [
+            IconButton(onPressed:()=> authController.google_signOut(), icon: Icon(Icons.logout,color: Colors.black,))
+          ],
         ),
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 15),

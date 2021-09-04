@@ -2,48 +2,54 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:navsocial/constants/controller.dart';
 import 'package:shimmer/shimmer.dart';
 
 class UpdateInfoPages extends StatelessWidget {
   const UpdateInfoPages({Key key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     var param = Get.arguments;
     final controller = TextEditingController();
 
-    Widget input(int type,String value)
-    {
-      switch(type)
-      {
+    Widget input(int type, String value) {
+      switch (type) {
         case 0:
           return Padding(
             padding: EdgeInsets.only(top: 10),
             child: InkWell(
               onTap: () {
-                updateInfoController.getImage();
+                updateInfoController.getImage(ImageSource.gallery);
               },
-              child: CachedNetworkImage(
-                imageUrl: authController.auth.currentUser.photoURL ??
-                    "https://www.google.com/",
-                imageBuilder: (context, imageProvider) => CircleAvatar(
-                  radius: 75,
-                  backgroundImage: imageProvider,
-                ),
-                errorWidget: (context, url, error) => CircleAvatar(
-                  radius: 75,
-                  backgroundImage: AssetImage("assets/logo/logo.png"),
-                ),
-                placeholder: (context, url) => Shimmer.fromColors(
-                  child: CircleAvatar(
-                    radius: 75,
-                    backgroundColor: Colors.black,
-                  ),
-                  baseColor: Colors.grey,
-                  highlightColor: Colors.grey[100],
-                ),
+              child: Obx(
+                () => createNewPostController.isLoadedImage.value == true
+                    ? CircleAvatar(
+                        radius: 75,
+                        backgroundColor: Colors.black,
+                        backgroundImage:
+                            updateInfoController.selectedImage.value.image)
+                    : CachedNetworkImage(
+                        imageUrl: authController.auth.currentUser.photoURL ??
+                            "https://www.google.com/",
+                        imageBuilder: (context, imageProvider) => CircleAvatar(
+                          radius: 75,
+                          backgroundImage: imageProvider,
+                        ),
+                        errorWidget: (context, url, error) => CircleAvatar(
+                          radius: 75,
+                          backgroundImage: AssetImage("assets/logo/logo.png"),
+                        ),
+                        placeholder: (context, url) => Shimmer.fromColors(
+                          child: CircleAvatar(
+                            radius: 75,
+                            backgroundColor: Colors.black,
+                          ),
+                          baseColor: Colors.grey,
+                          highlightColor: Colors.grey[100],
+                        ),
+                      ),
               ),
             ),
           );
@@ -59,12 +65,8 @@ class UpdateInfoPages extends StatelessWidget {
                 filled: true,
                 contentPadding: EdgeInsets.all(20)),
           );
-
       }
-
-
     }
-
 
     return Scaffold(
       appBar: AppBar(
@@ -74,9 +76,7 @@ class UpdateInfoPages extends StatelessWidget {
         title: Text(
           param[0].toString(),
           style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-              fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
         ),
         leading: Container(
           width: 25,
@@ -109,10 +109,9 @@ class UpdateInfoPages extends StatelessWidget {
                 width: double.infinity,
                 margin: EdgeInsets.all(10),
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.black87),
+                    style: ElevatedButton.styleFrom(primary: Colors.black87),
                     onPressed: () async {
-                    //this have to be multi options for diffences widget
+                      //this have to be multi options for diffences widget
                       Get.back();
                     },
                     child: Padding(

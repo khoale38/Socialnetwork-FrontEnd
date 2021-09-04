@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:navsocial/controller/auth_controller.dart';
+import 'package:navsocial/controller/create_new_post_controller.dart';
 import 'package:navsocial/controller/full_post_controller.dart';
 import 'package:navsocial/controller/home_controller.dart';
 import 'package:navsocial/controller/other_people_personal_controller.dart';
@@ -35,6 +36,7 @@ Future main() async {
     Get.put(OtherPeoplePersonalController());
     Get.put(FullPostController());
     Get.put(UpdateInfoController());
+    Get.put(CreateNewPostController());
   });
   runApp(MyApp());
 }

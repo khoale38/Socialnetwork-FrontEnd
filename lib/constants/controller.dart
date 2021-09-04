@@ -1,4 +1,5 @@
 import 'package:navsocial/controller/auth_controller.dart';
+import 'package:navsocial/controller/create_new_post_controller.dart';
 import 'package:navsocial/controller/full_post_controller.dart';
 import 'package:navsocial/controller/home_controller.dart';
 import 'package:navsocial/controller/other_people_personal_controller.dart';
@@ -13,3 +14,4 @@ SearchController searchController = SearchController.instance;
 OtherPeoplePersonalController otherPeoplePersonalController = OtherPeoplePersonalController.instance;
 FullPostController fullPostController = FullPostController.instance;
 UpdateInfoController updateInfoController =UpdateInfoController.instance;
+CreateNewPostController createNewPostController = CreateNewPostController.instance;
