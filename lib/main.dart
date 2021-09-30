@@ -30,7 +30,7 @@ Future main() async {
 
   await initialization.then((value) {
     //put controller here
-    // Get.put(AuthController());
+    Get.put(AuthController());
     Get.put(HomeController());
     Get.put(PersonalController());
     Get.put(SearchController());

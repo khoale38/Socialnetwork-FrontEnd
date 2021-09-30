@@ -27,7 +27,12 @@ class EditProfilePage extends StatelessWidget {
             },
           ),
           actions: [
-            IconButton(onPressed:()=> authController.google_signOut(), icon: Icon(Icons.logout,color: Colors.black,))
+            IconButton(
+                onPressed: () => {},
+                icon: Icon(
+                  Icons.logout,
+                  color: Colors.black,
+                ))
           ],
         ),
         body: Container(
@@ -35,11 +40,16 @@ class EditProfilePage extends StatelessWidget {
           child: Column(
             children: [
               GestureDetector(
-                onTap: ()=>Get.toNamed('/updateinfo', arguments: ["Avatar", 0, authController.auth.currentUser.photoURL]),//value need to change later
+                onTap: () => Get.toNamed('/updateinfo', arguments: [
+                  "Avatar",
+                  0,
+                  'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'
+                ]), //value need to change later
                 child: Center(
                   child: CachedNetworkImage(
-                    imageUrl: authController.auth.currentUser.photoURL ??
-                        "https://www.google.com/",
+                    imageUrl:
+                        'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg' ??
+                            "https://www.google.com/",
                     imageBuilder: (context, imageProvider) => CircleAvatar(
                       radius: 75,
                       backgroundImage: imageProvider,
@@ -61,23 +71,21 @@ class EditProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               AutoSizeText(
-                "UID :" + authController.auth.currentUser.uid,
+                "UID : uid",
                 style: TextStyle(fontWeight: FontWeight.bold),
                 minFontSize: 18,
                 maxLines: 1,
               ),
               SizedBox(height: 10),
               Text(
-                authController.auth.currentUser.displayName != null
-                    ? authController.auth.currentUser.displayName
-                    : "Nick Name",
+                "Nick Name",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
               EditProfileWidget(
                 title: "Name",
-                value: authController.auth.currentUser.displayName,//TODO:temp
-                widget: Text(authController.auth.currentUser.displayName,//TODO:temp
+                value: "displayName", //TODO:temp
+                widget: Text("displayName", //TODO:temp
                     style: TextStyle(
                         fontSize: 18,
                         color: Color(0xff999999),
