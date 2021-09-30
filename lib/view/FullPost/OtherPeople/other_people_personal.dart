@@ -37,8 +37,9 @@ class OtherPeoplePersonalPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   child: CachedNetworkImage(
-                    imageUrl: authController.auth.currentUser.photoURL ??
-                        "https://www.google.com/",
+                    imageUrl:
+                        'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg' ??
+                            "https://www.google.com/",
                     imageBuilder: (context, imageProvider) => CircleAvatar(
                       radius: 50,
                       backgroundImage: imageProvider,
@@ -66,14 +67,12 @@ class OtherPeoplePersonalPage extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          authController.auth.currentUser.displayName != null
-                              ? authController.auth.currentUser.displayName
-                              : "Nick Name",
+                          "Nick Name",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 5),
-                        0 == 1//dummy testing
+                        0 == 1 //dummy testing
                             ? OutlinedButton.icon(
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.white,

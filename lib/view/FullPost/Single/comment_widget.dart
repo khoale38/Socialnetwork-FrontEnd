@@ -17,15 +17,14 @@ class CommentWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-
               padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
               child: Column(
                 children: [
                   CircleAvatar(
                     radius: 33,
-                    backgroundImage:
-                        NetworkImage(authController.auth.currentUser.photoURL),
+                    backgroundImage: NetworkImage(
+                        'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 10),
@@ -70,21 +69,17 @@ class CommentWidget extends StatelessWidget {
                 ],
               ),
             ),
-
             Expanded(
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
-                margin: EdgeInsets.only(top: 5,bottom: 5,right: 5),
+                margin: EdgeInsets.only(top: 5, bottom: 5, right: 5),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-
                     AutoSizeText(
-                      authController.auth.currentUser.displayName != null
-                          ? authController.auth.currentUser.displayName
-                          : "Nick Name",
+                      "Nick Name",
                       textAlign: TextAlign.start,
                       style: TextStyle(fontWeight: FontWeight.bold),
                       minFontSize: 18,

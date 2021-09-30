@@ -19,6 +19,7 @@ import 'package:navsocial/view/Loading.dart';
 import 'package:navsocial/view/Login.dart';
 import 'package:navsocial/view/Home.dart';
 
+import 'constants/controller.dart';
 import 'constants/firebase.dart';
 import 'controller/personal_controller.dart';
 
@@ -29,7 +30,7 @@ Future main() async {
 
   await initialization.then((value) {
     //put controller here
-    Get.put(AuthController());
+    // Get.put(AuthController());
     Get.put(HomeController());
     Get.put(PersonalController());
     Get.put(SearchController());
@@ -61,10 +62,10 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/newfeed", page: () => NewFeedPage()),
         GetPage(name: "/personal", page: () => PersonalPage()),
         GetPage(name: "/newpost", page: () => CreateNewPostPage()),
-        GetPage(name: "/editprofile", page: ()=> EditProfilePage()),
-        GetPage(name: "/updateinfo", page: ()=>UpdateInfoPages()),
+        GetPage(name: "/editprofile", page: () => EditProfilePage()),
+        GetPage(name: "/updateinfo", page: () => UpdateInfoPages()),
       ],
-      initialRoute: "/login",
+      initialRoute: "/main",
     );
   }
 }

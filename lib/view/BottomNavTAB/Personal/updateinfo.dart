@@ -31,7 +31,8 @@ class UpdateInfoPages extends StatelessWidget {
                         backgroundImage:
                             updateInfoController.selectedImage.value.image)
                     : CachedNetworkImage(
-                        imageUrl: authController.auth.currentUser.photoURL ??
+                        imageUrl: Image.network(
+                                'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg') ??
                             "https://www.google.com/",
                         imageBuilder: (context, imageProvider) => CircleAvatar(
                           radius: 75,

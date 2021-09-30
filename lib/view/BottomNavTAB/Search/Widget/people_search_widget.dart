@@ -13,16 +13,14 @@ class PeopleSearch extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 25,
-            backgroundImage:
-                NetworkImage(authController.auth.currentUser.photoURL),
+            backgroundImage: NetworkImage(
+                'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
           ),
           SizedBox(
             width: 10,
           ),
           Text(
-            authController.auth.currentUser.displayName != null
-                ? authController.auth.currentUser.displayName
-                : "Nick Name",
+            "Nick Name",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ],

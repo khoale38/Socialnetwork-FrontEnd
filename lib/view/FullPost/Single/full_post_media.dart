@@ -13,7 +13,7 @@ class FullPostMediaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: ()=>FocusManager.instance.primaryFocus?.unfocus(),
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
           floatingActionButton: FloatingActionButton(
             elevation: 0,
@@ -63,7 +63,7 @@ class FullPostMediaPage extends StatelessWidget {
                       CircleAvatar(
                         radius: 25,
                         backgroundImage: NetworkImage(
-                            authController.auth.currentUser.photoURL),
+                            'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
                       ),
                       SizedBox(
                         width: 10,
@@ -72,17 +72,17 @@ class FullPostMediaPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            authController.auth.currentUser.displayName != null
-                                ? authController.auth.currentUser.displayName
-                                : "Nick Name",
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            "Nick Name",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
                             height: 3,
                           ),
                           Text(
                             "Today at 16pm",
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
                           )
                         ],
                       ),
@@ -96,7 +96,7 @@ class FullPostMediaPage extends StatelessWidget {
                       'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 8, left: 5,right:5),
+                    padding: EdgeInsets.only(top: 8, left: 5, right: 5),
                     child: RichText(
                       text: new TextSpan(
                         // Note: Styles for TextSpans must be explicitly defined.
@@ -107,10 +107,12 @@ class FullPostMediaPage extends StatelessWidget {
                         ),
                         children: <TextSpan>[
                           new TextSpan(
-                              text: authController.auth.currentUser.displayName + ": ",
+                              text: "Nick Name" + ": ",
                               style: new TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                          new TextSpan(text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. ut '),
+                          new TextSpan(
+                              text:
+                                  'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. ut '),
                         ],
                       ),
                     )),
@@ -176,9 +178,9 @@ class FullPostMediaPage extends StatelessWidget {
                       children: [
                         Expanded(
                             child: TextField(
-                              maxLength: 150,
-                              maxLines: null,
-                              keyboardType: TextInputType.multiline,
+                          maxLength: 150,
+                          maxLines: null,
+                          keyboardType: TextInputType.multiline,
                           textAlignVertical: TextAlignVertical.center,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
@@ -188,7 +190,8 @@ class FullPostMediaPage extends StatelessWidget {
                         )),
                         Container(
                             margin: EdgeInsets.only(left: 10),
-                            child: InkWell(onTap: (){},
+                            child: InkWell(
+                              onTap: () {},
                               child: Text(
                                 "Send",
                                 style: TextStyle(

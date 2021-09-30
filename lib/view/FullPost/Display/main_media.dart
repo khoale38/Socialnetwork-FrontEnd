@@ -17,8 +17,8 @@ class MainMedia extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 25,
-              backgroundImage:
-                  NetworkImage(authController.auth.currentUser.photoURL),
+              backgroundImage: NetworkImage(
+                  'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
             ),
             SizedBox(
               width: 10,
@@ -27,9 +27,7 @@ class MainMedia extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  authController.auth.currentUser.displayName != null
-                      ? authController.auth.currentUser.displayName
-                      : "Nick Name",
+                  "Nick Name",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -51,7 +49,7 @@ class MainMedia extends StatelessWidget {
             'https://static.remove.bg/remove-bg-web/3661dd45c31a4ff23941855a7e4cedbbf6973643/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
       ),
       Container(
-          padding: EdgeInsets.only(top: 8, left: 3,right:3),
+          padding: EdgeInsets.only(top: 8, left: 3, right: 3),
           child: RichText(
             text: new TextSpan(
               // Note: Styles for TextSpans must be explicitly defined.
@@ -62,10 +60,12 @@ class MainMedia extends StatelessWidget {
               ),
               children: <TextSpan>[
                 new TextSpan(
-                    text: authController.auth.currentUser.displayName + ": ",
+                    text: "Nick Name" + ": ",
                     style: new TextStyle(
                         fontSize: 16, fontWeight: FontWeight.bold)),
-                new TextSpan(text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. ut '),
+                new TextSpan(
+                    text:
+                        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. ut '),
               ],
             ),
           )),

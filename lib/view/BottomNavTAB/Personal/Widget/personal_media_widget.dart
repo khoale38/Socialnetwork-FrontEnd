@@ -17,28 +17,33 @@ class PersonalMedia extends StatelessWidget {
         color: Colors.transparent,
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Column(
-          children: [ 0==1 ? //dummy testing here
-            GridView.builder(
-                itemCount: 15,
-                physics: NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 25,
-                  crossAxisSpacing: 15,
-                ),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () => Get.to(FullPostMediaPage()),
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://images.hdqwalls.com/wallpapers/forever-7th-capital-anime-4k-4x.jpg'),
+          children: [
+            1 == 1
+                ? //dummy testing here
+                GridView.builder(
+                    itemCount: 15,
+                    physics: NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 25,
+                      crossAxisSpacing: 15,
                     ),
-                  );
-                })
-            : SpinKitWave(color: Colors.grey,size: 45,)
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () => Get.to(FullPostMediaPage()),
+                        child: Image(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                              'https://images.hdqwalls.com/wallpapers/forever-7th-capital-anime-4k-4x.jpg'),
+                        ),
+                      );
+                    })
+                : SpinKitWave(
+                    color: Colors.grey,
+                    size: 45,
+                  )
           ],
         ),
       ),
